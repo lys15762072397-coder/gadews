@@ -36,8 +36,8 @@ export default function RealMap({ showCases, showHeatmap }: MapProps) {
     >
       {/* 接入 CartoDB 的暗黑风格世界地图 API (极具科幻感，完美契合你的UI) */}
       <TileLayer
-        attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.amap.com/">高德地图</a>'
+        url="https://webrd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}"
       />
 
       {/* 测试数据层：当打开 "Cases" (疫情事件) 开关时显示真实的地图标记 */}
