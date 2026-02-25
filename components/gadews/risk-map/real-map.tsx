@@ -69,13 +69,12 @@ export default function RealMap({ showCases, showHeatmap }: MapProps) {
       {/* 模拟高风险疫情爆发点：实心红点 + 透明红圈（发光效果） */}
       {showCases && (
         <>
-        </>{/* 核心点 */}
-        <CircleMarker center={[21.5, 111.0]} radius={6} color="#ffffff" weight={2} fillColor="#ef4444" fillOpacity={1}>
+          <CircleMarker center={[21.5, 111.0]} radius={6} color="#ffffff" weight={2} fillColor="#ef4444" fillOpacity={1}>
             <Tooltip direction="top" offset={[0, -10]} opacity={1}>
                 <div className="text-xs font-bold">WSSV Outbreak</div>
             </Tooltip>
-        </CircleMarker>
-        {/* 外围发光圈 */}
+          </CircleMarker>
+          {/* 外围发光圈 */}
         <CircleMarker center={[21.5, 111.0]} radius={20} color="#ef4444" weight={1} fillColor="#ef4444" fillOpacity={0.15} interactive={false} />
       </>
     )}
