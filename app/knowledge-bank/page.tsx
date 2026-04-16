@@ -19,6 +19,7 @@ import {
   Microscope,
   ShieldAlert,
 } from "lucide-react";
+import { LiteratureOverview } from "@/components/gadews/knowledge/literature-overview"; // New component for literature overview
 
 export const metadata = {
   title: "Knowledge Bank | GADEWS",
@@ -90,15 +91,16 @@ export default function KnowledgeBankPage() {
                 </span>
               </div>
               <span className="hidden h-4 w-px bg-border/50 sm:block" />
-              <div className="flex items-center gap-2">
-                <BookOpen className="h-3.5 w-3.5 text-cyan-400" />
-                <span className="text-[11px] text-muted-foreground">
+              {/* This is the existing literature link, we'll keep it but modify its purpose */}
+              <Link href="/knowledge-bank/literature" className="flex items-center gap-2 group">
+                <BookOpen className="h-3.5 w-3.5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+                <span className="text-[11px] text-muted-foreground group-hover:text-foreground/80 transition-colors">
                   Literature:{" "}
-                  <span className="font-medium text-foreground/70">
-                    12,800+
+                  <span className="font-medium text-foreground/70 group-hover:text-foreground transition-colors">
+                    172
                   </span>
                 </span>
-              </div>
+              </Link>
               <span className="hidden h-4 w-px bg-border/50 sm:block" />
               <div className="flex items-center gap-2">
                 <ShieldAlert className="h-3.5 w-3.5 text-orange-400" />
@@ -121,7 +123,11 @@ export default function KnowledgeBankPage() {
       {/* Section C: ERP Toolkit */}
       <ERPToolkit />
 
+      {/* Section D: Literature Overview - New Section */}
+      <LiteratureOverview />
+
       <Footer />
     </main>
   );
 }
+
